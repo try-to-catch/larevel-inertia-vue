@@ -2,14 +2,14 @@
     <Head>
         <title>{{ title }}</title>
     </Head>
-    <h1>Home page</h1>
+    <h1>About page</h1>
 </template>
 
 <script>
 import {Head} from "@inertiajs/vue3";
 
 export default {
-    name: "Home",
+    name: "About",
     props: {
         title: String
     },
