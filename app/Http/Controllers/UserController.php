@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 
@@ -72,6 +73,9 @@ class UserController extends Controller
             'name' => ['required'],
             'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
         ]));
+
+        Session::flash('message','User successfully updated');
+
         return to_route('users.index');
     }
 
